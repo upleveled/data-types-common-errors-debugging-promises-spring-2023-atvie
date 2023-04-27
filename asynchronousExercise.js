@@ -9,28 +9,24 @@ function print() {
   console.log('done');
 }
 
-// we want to only one console.log happen
-// we don't want the faster fetch to being printed
-// the output has to be in both places
-
 fakeFetch('youtube')
   .then((response) => {
-    youtube.response = response; // we are sure youtube is here
+    youtube.response = response; // define youtube response
 
-    // if youtube is here and instagram was faster
+    // I instagram response is already defined
     if (youtube.response && instagram.response) {
       print();
     }
   })
-  .catch(() => {});
+  .catch((error) => console.log(error));
 
 fakeFetch('instagram')
   .then((response) => {
-    instagram.response = response;
+    instagram.response = response; // define instagram response
 
-    // if instagram is here and youtube was faster
+    // I youtube response is already defined
     if (youtube.response && instagram.response) {
       print();
     }
   })
-  .catch(() => {});
+  .catch((error) => console.log(error));
