@@ -1,4 +1,4 @@
-import fakeFetch from './utils/fake-fetch.js';
+import fakeFetch from './utils/fakeFetch.js';
 
 const youtube = {};
 const instagram = {};
